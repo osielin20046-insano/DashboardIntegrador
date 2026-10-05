@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Dashboard Integrador de Servicios Digitales</title>
+<link rel="stylesheet" href="css/base.css">
+<link rel="stylesheet" href="css/layout.css">
+<link rel="stylesheet" href="css/components.css">
+</head>
+<body>
+<header class="top">
+  <h1>Dashboard de servicios digitales</h1>
+  <span id="auth" class="badge">Sin sesión</span>
+  <span class="badge">🛒 <b id="cartCount">0</b></span>
+</header>
+<main class="grid">
+  <section class="panel" id="store">
+    <div class="bar"><h2>Tienda</h2>
+      <select id="filter" aria-label="Filtrar por categoría"><option value="">Todas las categorías</option></select></div>
+    <div id="products" class="products" aria-live="polite">Cargando catálogo…</div>
+  </section>
+  <aside class="side">
+    <section class="panel"><h2>Carrito</h2><ul id="cart" class="cart"></ul></section>
+    <section class="panel"><h2 id="videoTitle">Videos</h2>
+      <div class="player"><div id="player"></div></div>
+      <p class="muted">Estado: <span id="playerState">sin video</span></p>
+      <ul id="videoList" class="videos"><li class="muted">Pulsa ▶ Videos en un producto.</li></ul>
+    </section>
+    <section class="panel" id="contact"><h2>Contacto</h2>
+      <form id="contactForm">
+        <input name="from_name" placeholder="Tu nombre" required>
+        <input name="reply_to" type="email" placeholder="Tu correo" required>
+        <textarea name="message" rows="3" placeholder="Mensaje" required></textarea>
+        <button>Enviar mensaje</button>
+        <p id="mailStatus" class="muted" role="status"></p>
+      </form>
+    </section>
+  </aside>
+</main>
+<details id="chat" class="chat" open>
+  <summary>Asistente <small id="chatStatus">…</small></summary>
+  <div id="chatLog" class="log"></div>
+  <form id="chatForm"><input id="chatInput" placeholder="Escribe aquí…" autocomplete="off"><button>Enviar</button></form>
+</details>
+<p id="toast" class="toast" hidden></p>
+<script type="module" src="js/main.js"></script>
+</body>
+</html>

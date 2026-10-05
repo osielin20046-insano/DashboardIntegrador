@@ -1,0 +1,59 @@
+.products{display:grid;grid-template-columns:repeat(auto-fill,minmax(190px,1fr));gap:.9rem}
+.card{border:1px solid var(--line);border-radius:var(--r);padding:.8rem;display:flex;flex-direction:column;gap:.4rem}
+.card img{height:130px;width:100%;object-fit:contain}
+.card h3{font-size:.9rem;margin:0;flex:1}
+.card .row{display:flex;gap:.4rem}
+.price{color:var(--price);font-weight:700;margin:0}
+.cart,.videos{list-style:none;margin:0;padding:0;font-size:.9rem}
+.cart li{display:flex;justify-content:space-between;gap:.5rem;padding:.3rem 0;border-bottom:1px solid var(--line)}
+.cart .total{font-weight:700}
+.cart button{padding:0 .4rem;background:none;color:var(--muted)}
+.player{aspect-ratio:16/9;background:var(--ink);border-radius:6px;overflow:hidden}
+.player iframe{width:100%;height:100%}
+.videos li{padding:.4rem 0;border-bottom:1px solid var(--line)}
+.videos button{background:none;color:var(--ink);text-align:left;padding:0}
+.chat{position:fixed;right:1rem;bottom:1rem;width:320px;max-width:calc(100vw - 2rem);background:var(--ink);color:#fff;border-radius:var(--r);box-shadow:0 8px 24px rgba(27,36,56,.35)}
+.chat summary{padding:.7rem 1rem;cursor:pointer;font-weight:600}
+.log{height:220px;overflow:auto;padding:.5rem 1rem;display:flex;flex-direction:column;gap:.4rem}
+.log p{margin:0;padding:.4rem .6rem;border-radius:8px;max-width:85%;font-size:.9rem}
+.log .user{align-self:flex-end;background:var(--accent)}
+.log .bot{background:#2c3852}
+.chat form{display:flex;gap:.4rem;padding:.6rem 1rem}
+.chat input{margin:0}
+.toast{position:fixed;left:50%;bottom:1rem;transform:translateX(-50%);background:#8a1c1c;color:#fff;padding:.6rem 1rem;border-radius:6px;margin:0;z-index:5}
+
+/* Sugerencias de preguntas rápidas (Chips) */
+.chat-suggestions {
+  display: flex;
+  gap: 0.4rem;
+  overflow-x: auto;
+  padding: 0.4rem 1rem;
+  white-space: nowrap;
+  scrollbar-width: thin;
+}
+
+.chat-suggestions::-webkit-scrollbar {
+  height: 4px;
+}
+
+.chat-suggestions::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 4px;
+}
+
+.sugg-chip {
+  background: #2c3852;
+  color: #fff;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  padding: 0.3rem 0.6rem;
+  font-size: 0.8rem;
+  cursor: pointer;
+  transition: background 0.2s, border-color 0.2s;
+  flex-shrink: 0;
+}
+
+.sugg-chip:hover {
+  background: var(--accent);
+  border-color: var(--accent);
+}
